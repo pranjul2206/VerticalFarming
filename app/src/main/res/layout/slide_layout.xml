@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/slide_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/indoorfarming"/>
+
+    <TextView
+        android:id="@+id/slide_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/slide_image"
+        android:layout_marginTop="584dp"
+        android:layout_centerHorizontal="true"
+        android:text="HEADING"
+        android:textAlignment="center"
+        android:textColor="@color/colorTransparentWhite"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/slide_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/slide_heading"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="30dp"
+        android:paddingRight="40dp"
+        android:paddingLeft="40dp"
+        android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer"
+        android:textAlignment="center"
+        android:textColor="@color/colorTransparentWhite"
+        android:textSize="18sp" />
+</RelativeLayout>
