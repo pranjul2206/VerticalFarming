@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "797777982892",
+    "firebase_url": "https://verticalfarming.firebaseio.com",
+    "project_id": "verticalfarming",
+    "storage_bucket": "verticalfarming.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:797777982892:android:bd434548c99dfaf4",
+        "android_client_info": {
+          "package_name": "com.example.verticalfarming"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "797777982892-ep4l5jup13qlhrsefn75q27vtcdi6qgo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.verticalfarming",
+            "certificate_hash": "0a4ec0d83a7a06d3db04839f468b9868f5bd34b5"
+          }
+        },
+        {
+          "client_id": "797777982892-gn9pidvc10171mg9qk43aktn00g4bdqt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACmM1F6anXmmmlSr___cR9I6gq3KtVpd0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "797777982892-gn9pidvc10171mg9qk43aktn00g4bdqt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

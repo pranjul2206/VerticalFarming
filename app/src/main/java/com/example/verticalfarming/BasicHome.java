@@ -1,5 +1,6 @@
 package com.example.verticalfarming;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -40,7 +41,7 @@ public class BasicHome extends AppCompatActivity
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        
+
         //RelativeLayouts
         education=(RelativeLayout)findViewById(R.id.cardRLayout1);
         handholding=(RelativeLayout)findViewById(R.id.cardRLayout2);
@@ -52,7 +53,8 @@ public class BasicHome extends AppCompatActivity
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(view.getContext(), newsArea.class);
+                view.getContext().startActivity(intent);
             }
         });
     }
