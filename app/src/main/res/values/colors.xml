@@ -9,4 +9,7 @@
     <color name="gif2">#f84d7c</color>
     <color name="gif3">#7fcad1</color>
     <color name="gif4">#fdfdfd</color>
+    <color name="MaterialEducation">#9855F9</color>
+    <color name="MaterialHandholding">#35B8E0</color>
+    <color name="MaterialSupport">#FFB649</color>
 </resources>

@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                     mSlideViewPager.setCurrentItem(mcurrentpage+1);
                 }
                 else {
-                    Intent intent = new Intent(view.getContext(), HomeActivity.class);
+                    Intent intent = new Intent(view.getContext(), BasicHome.class);
                     view.getContext().startActivity(intent);
                 }
             }
