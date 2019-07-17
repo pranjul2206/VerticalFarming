@@ -9,13 +9,18 @@
     android:background="@color/gif1"
     tools:context=".MainActivity">
 
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="840dp"
+        android:id="@+id/slideViewPager"
+        />
 
     <Button
         android:id="@+id/backbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="100dp"
-        android:layout_marginTop="875dp"
+        android:layout_alignParentBottom="true"
         android:background="@android:color/transparent"
         android:textColor="@color/colorTransparentWhite"
         android:layout_toRightOf="@+id/dotsLayout"
@@ -25,8 +30,7 @@
         android:id="@+id/nextbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="875dp"
+        android:layout_alignParentBottom="true"
         android:layout_marginRight="100dp"
         android:layout_toLeftOf="@+id/dotsLayout"
         android:background="@android:color/transparent"
@@ -34,17 +38,12 @@
         android:textColor="@color/colorTransparentWhite"
         android:visibility="invisible" />
 
-    <androidx.viewpager.widget.ViewPager
-        android:layout_width="match_parent"
-        android:layout_height="840dp"
-        android:id="@+id/slideViewPager"
-        />
 
     <LinearLayout
         android:id="@+id/dotsLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/slideViewPager"
+        android:layout_alignParentBottom="true"
         android:orientation="horizontal"
         android:layout_centerInParent="true"
         android:paddingTop="30dp"
