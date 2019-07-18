@@ -33,16 +33,10 @@ public class newsArea extends AppCompatActivity {
         list=new ArrayList<>();
         try{
             //DatabaseReference dbproducts= FirebaseDatabase.getInstance().getReference("https://verticalfarming.firebaseio.com/products");
-
-
             FirebaseDatabase dbproducts = FirebaseDatabase.getInstance();
-            FirebaseDatabase.getInstance().setPersistenceEnabled(true);
-            //Toast.makeText(this, dbproducts.getReference().toString(), Toast.LENGTH_SHORT).show();
-            Log.d("myTagGGGGGGGGGGGGGGGGGGGGGGGG", dbproducts.getReference().toString());
+            //FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+            //Log.d("myTagGGGGGGGGGGGGGGGGGGGGGGGG", dbproducts.getReference().toString());
             DatabaseReference myRef = dbproducts.getReference("products");
-            Log.d("PRANJUL", myRef.toString());
-
-
             myRef.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -65,6 +59,7 @@ public class newsArea extends AppCompatActivity {
         }
         catch (Exception e){
             Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_SHORT).show();
+            Log.d("PRANJUL", e.toString());
         }
 
         adapter=new newsadapter(this,list);
