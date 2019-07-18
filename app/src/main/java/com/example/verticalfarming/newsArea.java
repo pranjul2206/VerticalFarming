@@ -36,6 +36,7 @@ public class newsArea extends AppCompatActivity {
 
 
             FirebaseDatabase dbproducts = FirebaseDatabase.getInstance();
+            FirebaseDatabase.getInstance().setPersistenceEnabled(true);
             //Toast.makeText(this, dbproducts.getReference().toString(), Toast.LENGTH_SHORT).show();
             Log.d("myTagGGGGGGGGGGGGGGGGGGGGGGGG", dbproducts.getReference().toString());
             DatabaseReference myRef = dbproducts.getReference("products");
