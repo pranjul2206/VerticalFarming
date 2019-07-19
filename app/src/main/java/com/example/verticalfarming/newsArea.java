@@ -27,6 +27,7 @@ public class newsArea extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_area);
+        //initialization of all the views
         recyclerView=findViewById(R.id.recycleView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -42,6 +43,7 @@ public class newsArea extends AppCompatActivity {
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     if(dataSnapshot.exists())
                     {
+                        //looping all over the valuews in product and passing it to list
                         for (DataSnapshot productSnapshot:dataSnapshot.getChildren()){
                             newscontents p=productSnapshot.getValue(newscontents.class);
                             list.add(p);
@@ -57,12 +59,10 @@ public class newsArea extends AppCompatActivity {
                 }
             });
         }
+        // for any exception occuring
         catch (Exception e){
             Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_SHORT).show();
             Log.d("PRANJUL", e.toString());
         }
-
-        adapter=new newsadapter(this,list);
-        recyclerView.setAdapter(adapter);
     }
 }

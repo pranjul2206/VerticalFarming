@@ -31,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Intent intent = new Intent(this, newsArea.class);
+        this.startActivity(intent);
+
         //this section for linking variable to actual views
 
         mSlideViewPager=(ViewPager)findViewById(R.id.slideViewPager);

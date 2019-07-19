@@ -10,18 +10,22 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 public class newsadapter extends RecyclerView.Adapter<newsadapter.newsViewHolder> {
 
+        //creating context for layout reference and list for layout array
         Context context;
         List<newscontents> newscontentsList;
 
+        //constructor
     public newsadapter(Context context, List<newscontents> newscontentsList) {
         this.context = context;
         this.newscontentsList = newscontentsList;
     }
-
+    // all three methods of recycle view
     @NonNull
     @Override
     public newsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -35,6 +39,8 @@ public class newsadapter extends RecyclerView.Adapter<newsadapter.newsViewHolder
         newscontents nc=newscontentsList.get(position);
         holder.heading.setText(nc.getTitle());
         holder.desc.setText(nc.getDesc());
+        //using picasso for getting image thhrough url
+        Picasso.get().load(nc.getImage()).into(holder.image);
         //holder.image.setImageDrawable(context.getResources().getDrawable(nc.getImage()));
     }
 
@@ -48,6 +54,7 @@ public class newsadapter extends RecyclerView.Adapter<newsadapter.newsViewHolder
         ImageView image;
         TextView heading;
         TextView desc;
+        //so that we can get the reference only once
         public newsViewHolder(@NonNull View itemView) {
             super(itemView);
             image=(ImageView)itemView.findViewById(R.id.newsimage);

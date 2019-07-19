@@ -1,5 +1,5 @@
 package com.example.verticalfarming;
-
+//for setting and getting values
 public class newscontents {
     public String image;
     public String title,desc;
