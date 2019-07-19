@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.ramotion.foldingcell.FoldingCell;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -38,10 +39,12 @@ public class newsadapter extends RecyclerView.Adapter<newsadapter.newsViewHolder
     public void onBindViewHolder(@NonNull newsViewHolder holder, int position) {
         newscontents nc=newscontentsList.get(position);
         holder.heading.setText(nc.getTitle());
+        holder.headingouter.setText(nc.getTitle());
         holder.desc.setText(nc.getDesc());
         //using picasso for getting image thhrough url
         Picasso.get().load(nc.getImage()).into(holder.image);
         //holder.image.setImageDrawable(context.getResources().getDrawable(nc.getImage()));
+
     }
 
     @Override
@@ -53,6 +56,7 @@ public class newsadapter extends RecyclerView.Adapter<newsadapter.newsViewHolder
 
         ImageView image;
         TextView heading;
+        TextView headingouter;
         TextView desc;
         //so that we can get the reference only once
         public newsViewHolder(@NonNull View itemView) {
@@ -60,6 +64,14 @@ public class newsadapter extends RecyclerView.Adapter<newsadapter.newsViewHolder
             image=(ImageView)itemView.findViewById(R.id.newsimage);
             heading=(TextView) itemView.findViewById(R.id.newsheading);
             desc=(TextView)itemView.findViewById(R.id.newscontent);
+            headingouter=(TextView)itemView.findViewById(R.id.newsheadingouter);
+            final FoldingCell fc=itemView.findViewById(R.id.folding_cell);
+            fc.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    fc.toggle(false);
+                }
+            });
         }
     }
 }
