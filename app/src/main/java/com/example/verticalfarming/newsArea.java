@@ -2,13 +2,18 @@ package com.example.verticalfarming;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
+import com.facebook.shimmer.Shimmer;
+import com.facebook.shimmer.ShimmerFrameLayout;
+import com.google.android.material.appbar.AppBarLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -23,11 +28,17 @@ public class newsArea extends AppCompatActivity {
     RecyclerView recyclerView;
     newsadapter adapter;
     List<newscontents> list;
+    private ShimmerFrameLayout shimmerFrameLayout;
+    NestedScrollView nestedScrollView;
+    AppBarLayout appBarLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_area);
         //initialization of all the views
+        shimmerFrameLayout=findViewById(R.id.shimmer_news);
+        nestedScrollView=findViewById(R.id.newsNestedScroll);
+        appBarLayout=findViewById(R.id.newsAppBar);
         recyclerView=findViewById(R.id.recycleView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -48,6 +59,14 @@ public class newsArea extends AppCompatActivity {
                             newscontents p=productSnapshot.getValue(newscontents.class);
                             list.add(p);
                         }
+
+                        //adding shimmet before calling adapter
+
+                        shimmerFrameLayout.stopShimmer();
+                        shimmerFrameLayout.setVisibility(View.GONE);
+                        appBarLayout.setVisibility(View.VISIBLE);
+                        recyclerView.setVisibility(View.VISIBLE);
+
                         adapter=new newsadapter(newsArea.this,list);
                         recyclerView.setAdapter(adapter);
                     }
@@ -64,5 +83,18 @@ public class newsArea extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_SHORT).show();
             Log.d("PRANJUL", e.toString());
         }
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        shimmerFrameLayout.startShimmer();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        shimmerFrameLayout.stopShimmer();
     }
 }

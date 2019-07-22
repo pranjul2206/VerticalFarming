@@ -48,7 +48,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:id="@+id/cardRLayout1"
+            android:id="@+id/GenericcardRLayout1"
             android:layout_weight="1">
             <!--card 1-->
             <androidx.cardview.widget.CardView
@@ -128,7 +128,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:id="@+id/cardRLayout2">
+            android:id="@+id/CropHandcardRLayout2">
 
 
             <!--card  2-->
@@ -207,7 +207,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:id="@+id/cardRLayout3">
+            android:id="@+id/ChatcardRLayout3">
             <!--card 3-->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"

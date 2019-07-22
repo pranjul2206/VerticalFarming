@@ -43,12 +43,41 @@ public class BasicHome extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         //RelativeLayouts
-        education=(RelativeLayout)findViewById(R.id.cardRLayout1);
-        handholding=(RelativeLayout)findViewById(R.id.cardRLayout2);
-        support=(RelativeLayout)findViewById(R.id.cardRLayout3);
+        education=(RelativeLayout)findViewById(R.id.GenericcardRLayout1);
+        handholding=(RelativeLayout)findViewById(R.id.CropHandcardRLayout2);
+        support=(RelativeLayout)findViewById(R.id.ChatcardRLayout3);
 
         //Buttons
         button=(Button)findViewById(R.id.button);
+
+
+
+        //OnclickListners
+
+
+        education.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), GenericEducation.class);
+                view.getContext().startActivity(intent);
+            }
+        });
+
+        handholding.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), CropHandholding.class);
+                view.getContext().startActivity(intent);
+            }
+        });
+
+        support.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), SupportCenter.class);
+                view.getContext().startActivity(intent);
+            }
+        });
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,11 +128,19 @@ public class BasicHome extends AppCompatActivity
 
         if (id == R.id.nav_home) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+            Intent intent = new Intent(this, BasicHome.class);
+            this.startActivity(intent);
+        } else if (id == R.id.nav_Generic) {
+            Intent intent = new Intent(this, GenericEducation.class);
+            this.startActivity(intent);
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_Crop) {
+            Intent intent = new Intent(this, CropHandholding.class);
+            this.startActivity(intent);
 
-        } else if (id == R.id.nav_tools) {
+        } else if (id == R.id.nav_Support) {
+            Intent intent = new Intent(this, SupportCenter.class);
+            this.startActivity(intent);
 
         } else if (id == R.id.nav_share) {
 
