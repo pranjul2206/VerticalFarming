@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Intent intent = new Intent(this, GenericEducation.class);
+        Intent intent = new Intent(this, GenericEducationContent.class);
         this.startActivity(intent);
 
         //this section for linking variable to actual views

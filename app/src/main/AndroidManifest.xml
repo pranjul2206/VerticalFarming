@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SupportCenter"></activity>
+        <activity android:name=".GenericEducationContent"></activity>
+        <activity android:name=".SupportCenter" />
         <activity android:name=".CropHandholding" />
         <activity android:name=".GenericEducation" />
         <activity android:name=".newsArea" />

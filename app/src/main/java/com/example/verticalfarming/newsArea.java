@@ -31,6 +31,7 @@ public class newsArea extends AppCompatActivity {
     private ShimmerFrameLayout shimmerFrameLayout;
     NestedScrollView nestedScrollView;
     AppBarLayout appBarLayout;
+    int flag=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,10 +59,12 @@ public class newsArea extends AppCompatActivity {
                         for (DataSnapshot productSnapshot:dataSnapshot.getChildren()){
                             newscontents p=productSnapshot.getValue(newscontents.class);
                             list.add(p);
+                            flag++;
+                            Log.i("flagin",Integer.toString(flag));
                         }
 
                         //adding shimmet before calling adapter
-
+                        Log.i("flagout",Integer.toString(flag));
                         shimmerFrameLayout.stopShimmer();
                         shimmerFrameLayout.setVisibility(View.GONE);
                         appBarLayout.setVisibility(View.VISIBLE);
