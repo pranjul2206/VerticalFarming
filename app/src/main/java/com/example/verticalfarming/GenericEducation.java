@@ -6,6 +6,8 @@ import androidx.viewpager.widget.ViewPager;
 import android.animation.ArgbEvaluator;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +18,7 @@ public class GenericEducation extends AppCompatActivity {
     List<GenericEducationModel> models;
     Integer[] colors = null;
     ArgbEvaluator argbEvaluator = new ArgbEvaluator();
+    Button fPB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,10 +33,10 @@ public class GenericEducation extends AppCompatActivity {
         models.add(new GenericEducationModel(R.drawable.znamecard, "Cocoppeat", "Coir, or coconut fibre, is a natural fibre extracted from the husk of coconut and used in products such as floor mats, doormats, brushes and mattresses."));
         //Log.i("PRANJUL3", "balleballe3");
         adapter = new GenericEducationAdapter(models, this);
-
         viewPager = findViewById(R.id.viewPager);
         viewPager.setAdapter(adapter);
         viewPager.setPadding(130, 0, 130, 0);
+
 
         Integer[] colors_temp = {
                 getResources().getColor(R.color.color1),
@@ -49,14 +52,7 @@ public class GenericEducation extends AppCompatActivity {
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
                 if (position < (adapter.getCount() -1) && position < (colors.length - 1)) {
-                    viewPager.setBackgroundColor(
-
-                            (Integer) argbEvaluator.evaluate(
-                                    positionOffset,
-                                    colors[position],
-                                    colors[position + 1]
-                            )
-                    );
+                    viewPager.setBackgroundColor(calculateColor(position,positionOffset));
                 }
 
                 else {
@@ -74,6 +70,15 @@ public class GenericEducation extends AppCompatActivity {
 
             }
         });
+
+    }
+    public int calculateColor(int position,float positionOffset)
+    {
+        return ((Integer) argbEvaluator.evaluate(
+                positionOffset,
+                colors[position],
+                colors[position + 1]
+        ));
 
     }
     }

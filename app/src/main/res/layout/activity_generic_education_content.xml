@@ -6,12 +6,12 @@
     android:layout_height="match_parent"
     android:gravity="center"
     tools:context=".GenericEducationContent">
+
     <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/GenericContentViewPager"
-        android:layout_centerInParent="true"
-        android:clipToPadding="false">
+        android:layout_centerInParent="true">
 
     </androidx.viewpager.widget.ViewPager>
 

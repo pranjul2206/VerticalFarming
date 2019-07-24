@@ -38,5 +38,6 @@ dependencies {
     implementation 'com.ramotion.foldingcell:folding-cell:1.2.3'
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
     implementation 'com.facebook.shimmer:shimmer:0.4.0'
+    implementation 'com.ToxicBakery.viewpager.transforms:view-pager-transforms:2.0.24'
 }
 apply plugin: 'com.google.gms.google-services'

@@ -9,6 +9,19 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.ToxicBakery.viewpager.transforms.BackgroundToForegroundTransformer;
+import com.ToxicBakery.viewpager.transforms.CubeOutTransformer;
+import com.ToxicBakery.viewpager.transforms.DepthPageTransformer;
+import com.ToxicBakery.viewpager.transforms.DrawerTransformer;
+import com.ToxicBakery.viewpager.transforms.FlipHorizontalTransformer;
+import com.ToxicBakery.viewpager.transforms.FlipVerticalTransformer;
+import com.ToxicBakery.viewpager.transforms.ForegroundToBackgroundTransformer;
+import com.ToxicBakery.viewpager.transforms.RotateDownTransformer;
+import com.ToxicBakery.viewpager.transforms.ScaleInOutTransformer;
+import com.ToxicBakery.viewpager.transforms.StackTransformer;
+import com.ToxicBakery.viewpager.transforms.TabletTransformer;
+import com.ToxicBakery.viewpager.transforms.ZoomInTransformer;
+import com.ToxicBakery.viewpager.transforms.ZoomOutSlideTransformer;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -60,7 +73,8 @@ public class GenericEducationContent extends AppCompatActivity {
                         adapter = new GenericEducationContentAdapter(models, GenericEducationContent.this);
                         viewPager = findViewById(R.id.viewPager);
                         viewPager.setAdapter(adapter);
-                        viewPager.setPadding(130, 0, 130, 0);
+                        viewPager.setPadding(60, 10, 40, 10);
+                        viewPager.setPageTransformer(true,new ScaleInOutTransformer());
                         Log.i("OUTSIDELOOP", Integer.toString(i));
 
                         Integer[] colors_temp = {
