@@ -3,6 +3,10 @@
     package="com.example.verticalfarming">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +15,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CropHandholdingContent"></activity>
+        <activity android:name=".mapwoaah"></activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/map_key" />
+
+        <activity android:name=".FliprBackgroundRun" />
+        <activity android:name=".CropHandholdingContent" />
         <activity android:name=".CityGreensUniversity" />
         <activity android:name=".GenericEducationContent" />
         <activity android:name=".SupportCenter" />
@@ -29,7 +40,8 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+        </activity> <!-- alll services here -->
+        <service android:name=".Myservice" />
     </application>
 
 </manifest>
